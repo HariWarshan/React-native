@@ -3,6 +3,8 @@ import React , { Component } from 'react';
 import Menu from './MenuComponent';
 import Dishdetail from './DishdetailComponent';
 import Home from './HomeComponent'
+import Contact from './ContactComponent'
+import About from './AboutComponent'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -43,21 +45,69 @@ const HomeNavigator = createStackNavigator()
 function HomeNavigatorScreen(){
     return(
         <HomeNavigator.Navigator
-            navigatorOptions={
-                headerStyle={
-                    backgroundColor:'#512DAB'
-                },
-                headerTintColor='#fff',
-                headerTitleStyle={
-                    color:'#fff'
-                }
+        screenOptions={{
+            headerStyle:{
+                backgroundColor: '#512DA8'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle:{
+                  color:'#fff'
             }
+        }}
         >
             <HomeNavigator.Screen
                 name="Home"
                 component={Home}
             />
         </HomeNavigator.Navigator>
+    )
+}
+
+
+const ContactNavigator = createStackNavigator()
+
+function ContactNavigatorScreen(){
+    return(
+        <ContactNavigator.Navigator
+        screenOptions={{
+            headerStyle:{
+                backgroundColor: '#512DA8'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle:{
+                  color:'#fff'
+            }
+        }}
+        >
+            <ContactNavigator.Screen 
+                name="Contact"
+                component={Contact}
+            />
+        </ContactNavigator.Navigator>
+    )
+}
+
+
+const AboutNavigator = createStackNavigator()
+
+function AboutComponentScreen(){
+    return(
+        <AboutNavigator.Navigator
+        screenOptions={{
+            headerStyle:{
+                backgroundColor: '#512DA8'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle:{
+                  color:'#fff'
+            }
+        }}
+        >
+            <AboutNavigator.Screen 
+                name="About"
+                component={About}
+            />
+        </AboutNavigator.Navigator>
     )
 }
 
@@ -73,7 +123,15 @@ function MainNavigatorScreen(){
             <MainNavigator.Screen 
                 name="Menu"
                 component = {MenuNavigatorScreen}
-            />       
+           />
+           <MainNavigator.Screen 
+            name="Contact"
+            component={ContactNavigatorScreen}
+           />
+           <MainNavigator.Screen 
+            name="About"
+            component={AboutComponentScreen}
+           />       
         </MainNavigator.Navigator>
     )
 }
