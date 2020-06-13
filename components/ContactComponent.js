@@ -27,7 +27,6 @@ class Contact extends Component{
                 <Text style={styles.myText}>Email:confusion@food.net</Text>
                 
                 
-                
 
             </Card>
         )
